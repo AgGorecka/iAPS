@@ -57,7 +57,6 @@ jobs:
     steps:
     - name: Checkout target repo
       if: |
-        needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
         (vars.SCHEDULED_BUILD != 'false' || vars.SCHEDULED_SYNC != 'false')
       uses: actions/checkout@v5
       with:
